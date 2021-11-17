@@ -1,39 +1,69 @@
 import React from 'react';
-import styled from 'styled-components';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import {useNavigate} from "react-router-dom";
 
 export default function Navbar() {
-    const ResumeLink = (
-        <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-          Resume
-        </a>
-    );
+    const navigateToPath = useNavigate();
 
     return (
-        <div>
-            <StyledLinks> 
-                <ol>About</ol>
-                <ol>Projects</ol>
-                <ol>Contact</ol>
-                <div>{ResumeLink}</div>
-            </StyledLinks>
-        </div>
+        <View style={styles.container}>
+            <TouchableOpacity 
+                onPress={() => navigateToPath('/')}
+                style={{paddingRight: 15}}
+            >
+                <Text style={styles.mainText}>Home</Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
+                onPress={() => navigateToPath('/about')}
+                style={{paddingRight: 15}}
+            >
+                <Text style={styles.mainText}>About</Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
+                onPress={() => navigateToPath('/projects')}
+                style={{paddingRight: 15}}
+            >
+                <Text style={styles.mainText}>Projects</Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
+                onPress={() => navigateToPath('/contact')}
+                style={{paddingRight: 15}}
+            >
+                <Text style={styles.mainText}>Contact</Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
+                onPress={() => {}}
+                style={styles.resumeLinkContainer}
+            >
+                <View style={{paddingVertical: 10, paddingHorizontal: 22}}>
+                    <Text style={styles.resumeText}>Resume</Text>
+                </View>  
+            </TouchableOpacity>
+        </View>  
     )
 }
 
-const StyledLinks = styled.div`
-  display: flex;
-  align-items: center;
-  
-  @media (max-width: 768px) {
-    display: none;
-  }
-
-  ol {
-    font-size: 22;
-  }
-  
-  .resume-button {
-    margin-left: 15px;
-    font-size: 50;
-  }
-`;
+const styles = StyleSheet.create({
+    container: {
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        paddingRight: 50,
+        paddingTop: 10
+    },
+    mainText: {
+        fontSize: 16,
+        opacity: 0.65
+    },
+    resumeText: {
+        fontSize: 16,
+        opacity: 0.65
+    },
+    resumeLinkContainer: {
+        borderColor: '#2C8DE7', 
+        borderWidth: 1.5, 
+        borderStyle: 'dashed', 
+        borderRadius: 10,
+    }
+})
