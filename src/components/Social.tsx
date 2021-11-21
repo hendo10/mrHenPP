@@ -18,7 +18,7 @@ export default function Social() {
             <View style={styles.socialIconContainer}>
                 {socialMedia.map((element, index) => {
                     return (
-                        <View>
+                        <View key={index}>
                             <TouchableOpacity onPress={() => window.open(element.url, "_blank")}>
                                 <Image
                                     style={{height: 30, width: 30, tintColor: 'black', opacity: 0.65}}
