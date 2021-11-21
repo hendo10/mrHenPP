@@ -7,38 +7,44 @@ export default function Navbar() {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity 
-                onPress={() => navigateToPath('/')}
-                style={{paddingRight: 15}}
-            >
-                <Text style={styles.mainText}>Home</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-                onPress={() => navigateToPath('/about')}
-                style={{paddingRight: 15}}
-            >
-                <Text style={styles.mainText}>About</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-                onPress={() => navigateToPath('/projects')}
-                style={{paddingRight: 15}}
-            >
-                <Text style={styles.mainText}>Projects</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-                onPress={() => navigateToPath('/contact')}
-                style={{paddingRight: 15}}
-            >
-                <Text style={styles.mainText}>Contact</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-                onPress={() => {}}
-                style={styles.resumeLinkContainer}
-            >
-                <View style={{paddingVertical: 10, paddingHorizontal: 22}}>
-                    <Text style={styles.resumeText}>Resume</Text>
-                </View>  
-            </TouchableOpacity>
+            <View style={{width: '76%', flexDirection: 'row', alignItems: 'center'}}>
+            <View style={{flex: 1, alignItems:'flex-start'}}>
+                <TouchableOpacity 
+                    onPress={() => navigateToPath('/')}
+                    style={{paddingRight: 15}}
+                >
+                    <Text style={styles.mainText}>Home</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end',}}>
+                <TouchableOpacity 
+                    onPress={() => navigateToPath('/about')}
+                    style={{paddingRight: 15}}
+                >
+                    <Text style={styles.mainText}>About</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    onPress={() => navigateToPath('/projects')}
+                    style={{paddingRight: 15}}
+                >
+                    <Text style={styles.mainText}>Projects</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    onPress={() => navigateToPath('/contact')}
+                    style={{paddingRight: 15}}
+                >
+                    <Text style={styles.mainText}>Contact</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    onPress={() => {}}
+                    style={styles.resumeLinkContainer}
+                >
+                    <View style={{paddingVertical: 10, paddingHorizontal: 22}}>
+                        <Text style={styles.resumeText}>Resume</Text>
+                    </View>  
+                </TouchableOpacity>
+            </View>
+            </View>
         </View>  
     )
 }
@@ -46,11 +52,9 @@ export default function Navbar() {
 const styles = StyleSheet.create({
     container: {
         display: 'flex',
-        alignItems: 'center',
         flexDirection: 'row',
-        justifyContent: 'flex-end',
-        paddingRight: 50,
-        paddingTop: 10
+        justifyContent: 'center',
+        paddingTop: 10,
     },
     mainText: {
         fontSize: 16,

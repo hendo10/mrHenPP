@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingVertical: 25, 
         backgroundColor: 'white',
-        flexDirection: 'column'
+        flexDirection: 'column',
     },
     mainTitle: {
         fontWeight: "800", 
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         fontSize: 19, 
         opacity: 0.65, 
         width: '76%',
-        lineHeight: 30 
+        lineHeight: 30,
     },
     mainTextContainer: {
         flex: 1, 
@@ -78,6 +78,5 @@ const styles = StyleSheet.create({
         justifyContent: "center",  
         marginTop: 50, 
         marginBottom: 25,
-        paddingLeft: 50,
     }
 });
