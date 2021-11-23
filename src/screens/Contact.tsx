@@ -13,7 +13,7 @@ export default function Contact() {
                     Get In Touch
                 </Text>
                 <Text style={[styles.mainText, {marginVertical: 25}]}>
-                    Looking for new opportunities and open to networking, my inbox is always open.{'\n'}
+                    Looking for new opportunities and networking, my inbox is always open.{'\n'}
                     Whether you have a question or just want to say hi, I’ll try my best to get back to you!
                 </Text>
                 <View>

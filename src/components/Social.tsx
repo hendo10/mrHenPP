@@ -18,7 +18,9 @@ export default function Social() {
             <View style={styles.socialIconContainer}>
                 {socialMedia.map((element, index) => {
                     return (
-                        <View key={index}>
+                        <View 
+                            style={{paddingRight: 33}}
+                            key={index}>
                             <TouchableOpacity onPress={() => window.open(element.url, "_blank")}>
                                 <Image
                                     style={{height: 30, width: 30, tintColor: 'black', opacity: 0.65}}
@@ -42,9 +44,7 @@ export default function Social() {
 
 const styles = StyleSheet.create({
     socialIconContainer: {
-        flexDirection: 'row', 
-        justifyContent: 'space-evenly', 
-        width: '50%', 
-        alignSelf: 'center'
+        flexDirection: 'row',
+        paddingTop: 15
     }
 })

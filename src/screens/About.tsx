@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 
 export default function About() {
     const skills = [
