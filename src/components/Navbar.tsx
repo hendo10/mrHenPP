@@ -1,9 +1,19 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import {useNavigate} from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
+import slidePdf from '../assets/cv/hchongCV112021vSlides.pdf';
+import wordPdf from '../assets/cv/hchongCV112012vDoc.pdf';
+import styled, { css } from 'styled-components';
 
 export default function Navbar() {
     const navigateToPath = useNavigate();
+
+    const StyledResumeLink = styled.div`
+        .resume-button {
+            margin-left: 15px;
+            font-size: var(--fz-xs);
+        }
+    `;
 
     return (
         <View style={styles.container}>
@@ -40,7 +50,12 @@ export default function Navbar() {
                     style={styles.resumeLinkContainer}
                 >
                     <View style={{paddingVertical: 10, paddingHorizontal: 22}}>
-                        <Text style={styles.resumeText}>Resume</Text>
+                        <a style='' href={slidePdf} target="_blank">
+                            Resume
+                        </a>
+                        {/* <a href={wordPdf} target="_blank">
+                            Resume
+                        </a> */}
                     </View>  
                 </TouchableOpacity>
             </View>
