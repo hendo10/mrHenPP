@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import twitterIcon from '../assets/twitter.png';
 import instagramIcon from '../assets/instagram.png';
 import githubIcon from '../assets/github.png';

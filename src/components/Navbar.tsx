@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import {useNavigate} from 'react-router-dom';
-import slidePdf from '../assets/cv/hchongCV112021vSlides.pdf';
-import wordPdf from '../assets/cv/hchongCV112012vDoc.pdf';
-import styled, { css } from 'styled-components';
+import slidePdf from '../assets/cv/henCVslide.pdf';
+// import wordPdf from '../assets/cv/henCVdoc.pdf';
+import styled from 'styled-components';
 
 const StyledResumeLink = styled.div`
     .resume-button {
