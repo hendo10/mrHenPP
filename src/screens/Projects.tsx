@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import githubIcon from '../assets/github.png';
 import externalLinkIcon from '../assets/externalLink.png';
 import lazytravelPic from '../assets/lazytraveler.png';
 
 export default function Projects() {
+    const [isHoover, setIsHoover] = useState<boolean>(false);
+
     const projects = [
         {
             name: 'Exploring the Blockchain', 
@@ -15,6 +17,16 @@ export default function Projects() {
             image: lazytravelPic,
             isUrl: false,
             isCurrent: true
+        },
+        {
+            name: 'Spotify Connect', 
+            description: '[update].', 
+            techStack: ['React', 'Redux', 'Express', 'PostgresSQL', 'Node.js'], 
+            githubUrl: 'https://github.com/hendo10/ttprep-dashboard', 
+            url: '', 
+            image: lazytravelPic,
+            isUrl: false,
+            isCurrent: false
         },
         {
             name: 'The Lazy Traveler', 
@@ -49,7 +61,7 @@ export default function Projects() {
                         <Text style={styles.feedItemTitle}>{name}</Text>
                     </View> 
                     
-                    <View style={{borderRadius: 5, backgroundColor: 'rgb(189, 189, 189)', zIndex: 3, width: '100%', }}>
+                    <View style={{borderRadius: 5, backgroundColor: 'rgb(189, 189, 189)', zIndex: 3, width: '100%'}}>
                         <Text style={styles.feedItemDescriptionText}>{description}</Text>
                     </View>
                     
@@ -94,7 +106,7 @@ export default function Projects() {
                     <Image 
                         source={{uri: image}}
                         resizeMode={'contain'}
-                        style={{flex: 1, zIndex: 1, opacity: 0.75, borderRadius: 5}}
+                        style={{flex: 1, width: '100%', opacity: 0.75, borderRadius: 5, borderColor: 'red', borderWidth: 1 }}
                     />
                 </View>
             </View>
@@ -109,7 +121,7 @@ export default function Projects() {
                         Some projects I've built
                     </Text>
                 </View>
-                <View style={{width: '76%', marginTop: 25, height: '1000px'}}>
+                <View style={{width: '76%', marginTop: 25, }}>
                 {projects.map((element, index) => {
                     return (
                         projectFeedItem(element.name, element.description, element.techStack, element.githubUrl, element.url, element.image, index, element.isUrl, element.isCurrent)
@@ -160,6 +172,7 @@ const styles = StyleSheet.create({
     imageContainer: {
         flex: 1,
         borderRadius: 5,
+        width: '90%'
     },
     detailsContainer: {
         flex: 1,
