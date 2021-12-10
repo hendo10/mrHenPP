@@ -1,13 +1,19 @@
 import React from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import ExtendedNavbar from '../components/ExtendedNavbar';
 
-export default function Contact() {
+interface Props {
+    isVisible?: boolean;
+}
+
+export default function Contact({ isVisible }: Props) {
     const handleEmailLink = () => {
         window.location.href = `mailto:chong.henry@gmail.com`
     }
 
     return (
         <View style={[styles.container]}>
+            { isVisible && <ExtendedNavbar /> }
             <View style={[styles.bodyContainer]}>
                 <Text style={styles.mainTitle}>
                     Get In Touch
@@ -45,7 +51,6 @@ export default function Contact() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingVertical: 25, 
         backgroundColor: 'white',
         flexDirection: 'column'
     },
@@ -66,7 +71,7 @@ const styles = StyleSheet.create({
         alignItems: "center", 
         justifyContent: "center",  
         marginTop: 50, 
-        marginBottom: 25,
+        paddingVertical: 25, 
     },
     sayHelloContainer: {
         borderColor: '#2C8DE7',

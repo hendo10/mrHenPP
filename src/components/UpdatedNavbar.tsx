@@ -17,7 +17,12 @@ import { AiFillHome } from "react-icons/ai";
 import slidePdf from '../assets/cv/henCVslide.pdf';
 // import wordPdf from '../assets/cv/henCVdoc.pdf';
 
-function UpdatedNavbar() {
+interface Props {
+    isVisible: boolean;
+    setIsVisible: Function;
+}
+
+function UpdatedNavbar({ isVisible, setIsVisible }: Props) {
     const [extendNavbar, setExtendNavbar] = useState<boolean>(false);
 
     const ResumeLink = (
@@ -49,15 +54,15 @@ function UpdatedNavbar() {
                         </ResumeLinkContainer>
                         <OpenLinksButton
                             onClick={() => {
-                                setExtendNavbar((curr) => !curr)
+                                setIsVisible(!isVisible)
                             }}
                         >
-                            {extendNavbar ? <>&#10005;</> : <>&#8801;</>}
+                            {isVisible ? <>&#10005;</> : <>&#8801;</>}
                         </OpenLinksButton>
                     </NavbarLinkContainer>
                 </RightContainer>
             </NavbarInnerContainer>
-            {extendNavbar && (
+            {/* {extendNavbar && (
                 <NavbarExtendedContainer>
                     <NavbarLinkExtended to="/about">About</NavbarLinkExtended>
                     <NavbarLinkExtended to="/projects">Projects</NavbarLinkExtended>
@@ -66,7 +71,7 @@ function UpdatedNavbar() {
                         {ExtendedResumeLink}
                     </ExtendedResumeLinkContainer>
                 </NavbarExtendedContainer>
-            )}
+            )} */}
         </NavbarContainer>
     )
 }
