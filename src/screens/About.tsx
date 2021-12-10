@@ -5,9 +5,10 @@ import ExtendedNavbar from '../components/ExtendedNavbar';
 
 interface Props {
     isVisible?: boolean;
+    setIsVisible: Function;
 }
 
-export default function About({ isVisible }: Props) {
+export default function About({ isVisible, setIsVisible }: Props) {
     const skills = [
         'JavaScript (ES6+)',
         'React, React-Native',
@@ -19,8 +20,8 @@ export default function About({ isVisible }: Props) {
     ];
 
     return (
-        <View style={[styles.container]}>
-            { isVisible && <ExtendedNavbar /> }
+        <View style={[styles.container, { backgroundColor: isVisible ? 'rgba(0,0,0,0.5)' : 'white' }]}>
+            { isVisible && <ExtendedNavbar isVisible={isVisible} setIsVisible={setIsVisible}/> }
             <View style={[styles.bodyContainer]}>
                 <View style={{width: '76%'}}>
                     <Text style={styles.mainTitle}>
@@ -85,6 +86,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         flexDirection: 'column',
+        width: '100%',
     },
     mainTitle: {
         fontWeight: "800", 

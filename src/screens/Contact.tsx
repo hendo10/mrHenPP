@@ -4,16 +4,17 @@ import ExtendedNavbar from '../components/ExtendedNavbar';
 
 interface Props {
     isVisible?: boolean;
+    setIsVisible: Function;
 }
 
-export default function Contact({ isVisible }: Props) {
+export default function Contact({ isVisible, setIsVisible }: Props) {
     const handleEmailLink = () => {
         window.location.href = `mailto:chong.henry@gmail.com`
     }
 
     return (
-        <View style={[styles.container]}>
-            { isVisible && <ExtendedNavbar /> }
+        <View style={[styles.container, { backgroundColor: isVisible ? 'rgba(0,0,0,0.5)' : 'white' }]}>
+            { isVisible && <ExtendedNavbar isVisible={isVisible} setIsVisible={setIsVisible}/> }
             <View style={[styles.bodyContainer]}>
                 <Text style={styles.mainTitle}>
                     Get In Touch

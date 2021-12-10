@@ -14,10 +14,10 @@ function App() {
             <Router>
                 <UpdatedNavbar isVisible={isVisible} setIsVisible={setIsVisible}/>
                 <Routes>
-                    <Route path='/' element={<Home isVisible={isVisible}/>} />
-                    <Route path='/about' element={<About isVisible={isVisible}/>} />
-                    <Route path='/projects' element={<Projects isVisible={isVisible}/>} />
-                    <Route path='/contact' element={<Contact isVisible={isVisible}/>} />
+                    <Route path='/' element={<Home isVisible={isVisible} setIsVisible={setIsVisible}/>} />
+                    <Route path='/about' element={<About isVisible={isVisible} setIsVisible={setIsVisible}/>} />
+                    <Route path='/projects' element={<Projects isVisible={isVisible} setIsVisible={setIsVisible}/>} />
+                    <Route path='/contact' element={<Contact isVisible={isVisible} setIsVisible={setIsVisible}/>} />
                 </Routes>
             </Router>
         </div>
