@@ -8,10 +8,11 @@ interface StyleProps {
 
 export const NavbarContainer = styled.nav<StyleProps>`
     width: 100%;
-    height: ${(props) => (props.extendNavbar ? "auto" : "80px")};
-    background-color: black;
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 
     @media (min-width: 700px) {
         height: 80px;
@@ -90,9 +91,9 @@ export const NavbarExtendedContainer = styled.div`
     align-content: center;
     padding-right: 11%;
     background-color: white;
+    position: fixed;
+    width: 88%;
     z-index: 999;
-    /* position: fixed; */
-    overflow: hidden;
 
     @media (min-width: 700px) {
         display: none;

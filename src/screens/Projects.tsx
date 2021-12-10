@@ -3,8 +3,13 @@ import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import githubIcon from '../assets/github.png';
 import externalLinkIcon from '../assets/externalLink.png';
 import lazytravelPic from '../assets/lazytraveler.png';
+import ExtendedNavbar from '../components/ExtendedNavbar';
 
-export default function Projects() {
+interface Props {
+    isVisible?: boolean;
+}
+
+export default function Projects({ isVisible }: Props) {
     const [isHoover, setIsHoover] = useState<boolean>(false);
 
     const projects = [
@@ -115,6 +120,7 @@ export default function Projects() {
 
     return (
         <View style={[styles.container]}>
+            { isVisible && <ExtendedNavbar /> }
             <View style={[styles.bodyContainer]}>
                 <View style={{width: '76%'}}>
                     <Text style={styles.mainTitle}>
@@ -136,7 +142,6 @@ export default function Projects() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingVertical: 25, 
         backgroundColor: 'white',
         flexDirection: 'column',
     },
@@ -156,7 +161,7 @@ const styles = StyleSheet.create({
         alignItems: "center", 
         justifyContent: "center",  
         marginTop: 50, 
-        marginBottom: 25,
+        paddingVertical: 25, 
     },
     feedItemContainer: {
         flex: 1,

@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import {View, StyleSheet, Text} from 'react-native';
+import ExtendedNavbar from '../components/ExtendedNavbar';
 
-export default function About() {
+interface Props {
+    isVisible?: boolean;
+}
+
+export default function About({ isVisible }: Props) {
     const skills = [
         'JavaScript (ES6+)',
         'React, React-Native',
@@ -15,6 +20,7 @@ export default function About() {
 
     return (
         <View style={[styles.container]}>
+            { isVisible && <ExtendedNavbar /> }
             <View style={[styles.bodyContainer]}>
                 <View style={{width: '76%'}}>
                     <Text style={styles.mainTitle}>
@@ -77,7 +83,6 @@ const StyledText = styled.div`
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingVertical: 25, 
         backgroundColor: 'white',
         flexDirection: 'column',
     },
@@ -96,7 +101,7 @@ const styles = StyleSheet.create({
         alignItems: "center", 
         justifyContent: "center",  
         marginTop: 50, 
-        marginBottom: 25,
+        paddingVertical: 25, 
     },
     sayHelloContainer: {
         borderColor: '#2C8DE7',

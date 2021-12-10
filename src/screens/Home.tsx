@@ -1,10 +1,16 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native';
 import Social from '../components/Social';
+import ExtendedNavbar from '../components/ExtendedNavbar';
 
-export default function Home() {
+interface Props {
+    isVisible?: boolean;
+}
+
+export default function Home({ isVisible }: Props) {
     return (
         <View style={[styles.container]}>
+            { isVisible && <ExtendedNavbar /> }
             <View style={[styles.bodyContainer]}>
                 <View style={{width: '76%'}}>
                     <Text style={styles.mainText}>Hi, my name is</Text>
@@ -31,7 +37,6 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingVertical: 25, 
         backgroundColor: 'white',
         flexDirection: 'column',
     },
@@ -40,7 +45,7 @@ const styles = StyleSheet.create({
         alignItems: "center", 
         justifyContent: "center",  
         marginTop: 50, 
-        marginBottom: 25,
+        paddingVertical: 25,
     },
     profileContainer: {
         flex: 1, 
