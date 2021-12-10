@@ -90,7 +90,6 @@ export const NavbarExtendedContainer = styled.div`
     flex-direction: column;
     align-items: flex-end;
     align-content: center;
-    /* padding-right: 11%; */
     background-color: white;
     position: fixed;
     width: 100%;
