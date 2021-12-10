@@ -34,7 +34,7 @@ function UpdatedNavbar({ isVisible, setIsVisible }: Props) {
     )
 
     return (
-        <NavbarContainer extendNavbar={extendNavbar}>
+        <NavbarContainer extendNavbar={isVisible}>
             <NavbarInnerContainer>
                 <LeftContainer>
                     <NavbarLinkContainer>
