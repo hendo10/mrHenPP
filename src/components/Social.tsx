@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import twitterIcon from '../assets/twitter.png';
 import instagramIcon from '../assets/instagram.png';
@@ -11,7 +11,9 @@ export default function Social() {
         {name: 'LinkedIn', url: 'https://www.linkedin.com/in/hchong10/', icon: linkedinIcon},
         {name: 'Twitter', url: 'https://twitter.com/hendo_84', icon: twitterIcon},
         {name: 'Instagram', url: 'https://www.instagram.com/mr__hen/', icon: instagramIcon}
-    ]
+    ];
+
+    useEffect(() => {}, [])
 
     const renderSocial = () => {
         return (

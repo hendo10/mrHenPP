@@ -33,13 +33,17 @@ function UpdatedNavbar({ isVisible, setIsVisible }: Props) {
         <a href={slidePdf} target="_blank">Resume</a>
     )
 
+    const handleClick = () => {
+        setIsVisible(false);
+    }
+
     return (
         <NavbarContainer extendNavbar={isVisible}>
             <NavbarInnerContainer>
                 <LeftContainer>
                     <NavbarLinkContainer>
                         <NavbarLink to="/">Home</NavbarLink>
-                        <HomeIcon to="/">
+                        <HomeIcon to="/" onClick={handleClick}>
                             <AiFillHome size={32} color={"black"}/>
                         </HomeIcon>
                     </NavbarLinkContainer>
@@ -62,16 +66,6 @@ function UpdatedNavbar({ isVisible, setIsVisible }: Props) {
                     </NavbarLinkContainer>
                 </RightContainer>
             </NavbarInnerContainer>
-            {/* {extendNavbar && (
-                <NavbarExtendedContainer>
-                    <NavbarLinkExtended to="/about">About</NavbarLinkExtended>
-                    <NavbarLinkExtended to="/projects">Projects</NavbarLinkExtended>
-                    <NavbarLinkExtended to="/contact">Contact</NavbarLinkExtended>
-                    <ExtendedResumeLinkContainer>
-                        {ExtendedResumeLink}
-                    </ExtendedResumeLinkContainer>
-                </NavbarExtendedContainer>
-            )} */}
         </NavbarContainer>
     )
 }

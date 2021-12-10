@@ -68,6 +68,7 @@ export const NavbarLinkExtended = styled(Link)`
     sans-serif;
     text-decoration: none;
     margin: 10px;
+    padding-right: 11%;
 `;
 
 export const OpenLinksButton = styled.button`
@@ -89,11 +90,11 @@ export const NavbarExtendedContainer = styled.div`
     flex-direction: column;
     align-items: flex-end;
     align-content: center;
-    padding-right: 11%;
     background-color: white;
     position: fixed;
-    width: 88%;
+    width: 100%;
     z-index: 999;
+    right: 0;
 
     @media (min-width: 700px) {
         display: none;
@@ -146,6 +147,7 @@ export const ExtendedResumeLinkContainer = styled.div`
     font-size: 18px;
     justify-content: center;
     margin: 10px;
+    padding-right: 11%;
 
     a {
         color: #2C8DE7;

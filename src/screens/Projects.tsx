@@ -7,9 +7,10 @@ import ExtendedNavbar from '../components/ExtendedNavbar';
 
 interface Props {
     isVisible?: boolean;
+    setIsVisible: Function;
 }
 
-export default function Projects({ isVisible }: Props) {
+export default function Projects({ isVisible, setIsVisible }: Props) {
     const [isHoover, setIsHoover] = useState<boolean>(false);
 
     const projects = [
@@ -119,8 +120,8 @@ export default function Projects({ isVisible }: Props) {
     }
 
     return (
-        <View style={[styles.container]}>
-            { isVisible && <ExtendedNavbar /> }
+        <View style={[styles.container, { backgroundColor: isVisible ? 'rgba(0,0,0,0.5)' : 'white' }]}>
+            { isVisible && <ExtendedNavbar isVisible={isVisible} setIsVisible={setIsVisible}/> }
             <View style={[styles.bodyContainer]}>
                 <View style={{width: '76%'}}>
                     <Text style={styles.mainTitle}>
