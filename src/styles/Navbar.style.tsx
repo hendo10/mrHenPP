@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -20,20 +19,23 @@ export const NavbarContainer = styled.nav<StyleProps>`
 `;
 
 export const LeftContainer = styled.div`
-    flex: 30%;
+    flex: 50%;
     display: flex;
     align-items: center;
     padding-left: 11%;
+    margin-left: -10px;
     background-color: white;
+    justify-content: flex-start;
 `;
 
 export const RightContainer = styled.div`
-    flex: 70%;
+    flex: 50%;
     display: flex;
     align-items: center;
     padding-right: 11%;
     background-color: white;
     justify-content: flex-end;
+    
 `;
 
 export const NavbarInnerContainer = styled.div`
@@ -44,6 +46,11 @@ export const NavbarInnerContainer = styled.div`
 
 export const NavbarLinkContainer = styled.div`
     display: flex;
+    justify-content: space-around;
+
+    @media (max-width: 700px) {
+        padding-left: 10px;
+    }
 `;
 
 export const NavbarLink = styled(Link)`
@@ -79,8 +86,9 @@ export const OpenLinksButton = styled.button`
     color: black;
     font-size: 30px;
     cursor: pointer;
+    margin-right: -10px;
 
-    @media (min-width: 700px) {
+    @media (min-width: 701px) {
         display: none;
     }
 `;
@@ -95,6 +103,7 @@ export const NavbarExtendedContainer = styled.div`
     width: 100%;
     z-index: 999;
     right: 0;
+    padding-bottom: 10px;
 
     @media (min-width: 700px) {
         display: none;
@@ -104,7 +113,7 @@ export const NavbarExtendedContainer = styled.div`
 export const HomeIcon = styled(Link)`
     display: flex;
 
-    @media (min-width: 700px) {
+    @media (min-width: 701px) {
         display: none;
     }
 `;
