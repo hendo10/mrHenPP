@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     NavbarContainer,
     LeftContainer,
     RightContainer,
     NavbarInnerContainer,
-    NavbarExtendedContainer,
     NavbarLinkContainer,
     NavbarLink,
     OpenLinksButton,
-    NavbarLinkExtended,
     HomeIcon,
     ResumeLinkContainer,
-    ExtendedResumeLinkContainer
 } from '../styles/Navbar.style';
 import { AiFillHome } from "react-icons/ai";
 import slidePdf from '../assets/cv/henCVslide.pdf';
@@ -23,8 +20,6 @@ interface Props {
 }
 
 function UpdatedNavbar({ isVisible, setIsVisible }: Props) {
-    const [extendNavbar, setExtendNavbar] = useState<boolean>(false);
-
     const ResumeLink = (
         <a className="resume-button" href={slidePdf} target="_blank">Resume</a>
     );

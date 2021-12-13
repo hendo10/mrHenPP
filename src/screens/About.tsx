@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {View, StyleSheet, Text} from 'react-native';
 import ExtendedNavbar from '../components/ExtendedNavbar';
 import { 
