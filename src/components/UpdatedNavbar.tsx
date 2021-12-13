@@ -29,10 +29,6 @@ function UpdatedNavbar({ isVisible, setIsVisible }: Props) {
         <a className="resume-button" href={slidePdf} target="_blank">Resume</a>
     );
 
-    const ExtendedResumeLink = (
-        <a href={slidePdf} target="_blank">Resume</a>
-    )
-
     const handleClick = () => {
         setIsVisible(false);
     }
