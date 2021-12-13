@@ -18,10 +18,6 @@ export default function Contact({ isVisible, setIsVisible }: Props) {
         window.location.href = `mailto:chong.henry@gmail.com`
     }
 
-    const EmailLink = (
-        <a className="email-button" href='#' target="_blank">Say Hello</a>
-    )
-
     return (
         <MainContainer isVisible={isVisible}>
             { isVisible && <ExtendedNavbar isVisible={isVisible} setIsVisible={setIsVisible}/> }

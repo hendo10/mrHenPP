@@ -47,6 +47,5 @@ export default function Social() {
 const styles = StyleSheet.create({
     socialIconContainer: {
         flexDirection: 'row',
-        paddingTop: 15
     }
 })

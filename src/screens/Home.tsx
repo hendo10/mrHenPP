@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
+import {StyleSheet} from 'react-native';
 import Social from '../components/Social';
 import ExtendedNavbar from '../components/ExtendedNavbar';
 import { 
@@ -51,11 +51,9 @@ export default function Home({ isVisible, setIsVisible }: Props) {
                 <StyledText>Hi, my name is</StyledText>
                 <StyledTitle>Henry Chong.</StyledTitle>
                 {width >= 800 ? desktopView() : mobileView()}
+                <Social />
             </BodyContainer>
         </MainContainer>
-        //         <View style={{width: '76%'}}>
-        //             <Social />
-        //         </View>
     )
 }
 
